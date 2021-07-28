@@ -1,8 +1,10 @@
 import ip from "variables/ip"
 //import {upLoadD} from "views/clientes/methods"
 //import { v4 as uuidv4 } from 'uuid';
-export default async (idDoc,nombre,folio,descripcion,seccion,asunto) => {
+export default async (c,idDoc,nombre,folio,descripcion,seccion,asunto) => {
     try{
+        c.setState({bandSucces: true});
+        const {setMsg, setColor} = c.state
         const sendUri = `${ip("2000")}comisarios/editFile`;
         //const dateUp =  
         const bodyJSON = {
@@ -27,7 +29,11 @@ export default async (idDoc,nombre,folio,descripcion,seccion,asunto) => {
     
         const responseJson = await response.json().then(r => {
             //alert(r.exito)
-            
+            /*setMsg("")
+            setMsg(nombre+" se ha actualizado con éxito...")
+            setColor("success")*/
+            //c.showNotification('trBO',nombre+" se ha actualizado con éxito...");
+            c.showNotification('tr',nombre+" se ha actualizado con éxito...");
             if(r.exito){
             //   c.setState({bandSucces: false});
             }

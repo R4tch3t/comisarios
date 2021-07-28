@@ -137,12 +137,14 @@ handleUpper = e => {
         }
 
         if (e.which === 32 || e.which > 39) {
-          this.selectionStartNombre = e.target.selectionStart
-          this.selectionEndNombre = e.target.selectionEnd
-          e.target.value = e.target.value.toUpperCase()
-          e.target.setSelectionRange(this.selectionStartNombre, this.selectionEndNombre);
+          /*
+            this.selectionStartNombre = e.target.selectionStart
+            this.selectionEndNombre = e.target.selectionEnd
+            e.target.value = e.target.value.toUpperCase()
+            e.target.setSelectionRange(this.selectionStartNombre, this.selectionEndNombre);
+          */
         }else if(e.which===13){
-          this.handdleUp()
+          //this.handdleUp()
         }
 
       //}

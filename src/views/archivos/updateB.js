@@ -21,7 +21,7 @@ export default (props)=>{
         const descripcion = document.getElementById("descripcion").value
         const seccion = document.getElementById("seccion").value
         const asunto = document.getElementById("asunto").value
-        editFileG(ID,nombre,folio,descripcion,seccion,asunto);
+        editFileG(c,ID,nombre,folio,descripcion,seccion,asunto);
     }
 
     return (<>
