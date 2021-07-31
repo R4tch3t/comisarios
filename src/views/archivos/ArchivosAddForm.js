@@ -117,7 +117,10 @@ handleUpper = e => {
         }
 
         if(e.target.id==="nombre"){
-          this.getFiles(1,e.target.value);
+          const id = document.getElementById("ID").value;
+          //if(!id){
+            this.getFiles(1,e.target.value);
+          //}
         }
 
         if(e.target.id==="folio"){

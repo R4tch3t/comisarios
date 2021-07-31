@@ -3,6 +3,7 @@ import ip from "variables/ip"
 //import { v4 as uuidv4 } from 'uuid';
 export default async (c,idDoc,nombre,folio,descripcion,seccion,asunto) => {
     try{
+        
         c.setState({bandSucces: true});
         const {setMsg, setColor} = c.state
         const sendUri = `${ip("2000")}comisarios/editFile`;
@@ -33,7 +34,8 @@ export default async (c,idDoc,nombre,folio,descripcion,seccion,asunto) => {
             setMsg(nombre+" se ha actualizado con éxito...")
             setColor("success")*/
             //c.showNotification('trBO',nombre+" se ha actualizado con éxito...");
-            c.showNotification('tr',nombre+" se ha actualizado con éxito...");
+            c.getFiles(0,idDoc);
+            c.showNotification('tr',nombre+" con ID "+idDoc+" se ha actualizado con éxito...");
             if(r.exito){
             //   c.setState({bandSucces: false});
             }
