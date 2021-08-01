@@ -1,7 +1,7 @@
 import ip from "variables/ip"
 //import {upLoadD} from "views/clientes/methods"
 //import { v4 as uuidv4 } from 'uuid';
-export default async (c,idDoc,nombre,folio,descripcion,seccion,asunto) => {
+export default async (c,idDoc,nombre,folio,descripcion,seccion,asunto,obs) => {
     try{
         
         c.setState({bandSucces: true});
@@ -16,7 +16,8 @@ export default async (c,idDoc,nombre,folio,descripcion,seccion,asunto) => {
             folio,
             descripcion,
             seccion,
-            asunto 
+            asunto,
+            obs
         }
 
         const response = await fetch(sendUri, {

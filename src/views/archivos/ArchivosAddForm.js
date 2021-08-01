@@ -123,7 +123,7 @@ handleUpper = e => {
         if(e.target.value===""){
           return false
         }
-        
+
         if(e.target.id==="nombre"){
           const id = document.getElementById("ID").value;
           //if(!id){
@@ -200,6 +200,7 @@ try {
             const descripcion = d.descripcion
             const seccion = d.seccion
             const asunto = d.asunto
+            const obs = d.obs
             
             /*const nombre = document.getElementById("nombre")
             const folio = document.getElementById("folio")
@@ -212,7 +213,7 @@ try {
             seccion.value=d.seccion
             asunto.value=d.asunto*/
             
-            this.setState({ID: v,nombre,folio,descripcion,seccion,asunto,bandSucces: false});
+            this.setState({ID: v,nombre,folio,descripcion,seccion,asunto,bandSucces: false,obs});
 
           }else if(!v){
             document.getElementById("nombre").value=""
@@ -220,6 +221,7 @@ try {
             document.getElementById("descripcion").value=""
             document.getElementById("seccion").value=""
             document.getElementById("asunto").value=""
+            document.getElementById("obs").value=""
           }
           this.setState({dataFiles: r.documentos, bandSucces: true});
         }
@@ -342,7 +344,7 @@ notify = (label,place, color,icon,CTA) => {
         ),
         type: type,
         icon: "tim-icons "+icon,
-        autoDismiss: 3000
+        autoDismiss: 3
         };
        // console.log(snackBand)
        // if(!snackBand){
