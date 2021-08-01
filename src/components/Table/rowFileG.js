@@ -39,6 +39,12 @@ export default (props) => {
     win.focus();
   }
 
+  const genDate = (ID,idDoc,d) => {
+    const IDL = document.getElementById("ID");
+    IDL.value=ID;
+    c.getFiles(0,ID);
+  }
+
   const theme = useTheme();
   const transitionDuration = {
     enter: theme.transitions.duration.enteringScreen,
@@ -124,19 +130,19 @@ export default (props) => {
         <TableRow  className={classes.tableBodyRow}>
           <TableCell className={classes.tableCell}
             onMouseEnter={(e)=>{e.target.style.cursor='pointer'}}
-            //onMouseUp={(e)=>{genDate(row.cta,row.key[row.key.length-1],row.idOrden)}}
+            onMouseUp={(e)=>{genDate(row.key)}}
             >
             <div id={row.uuid?(row.uuid+"ID"):(row.key+"ID")} >{row.key}</div>
           </TableCell>
           <TableCell className={classes.tableCell} 
             onMouseEnter={(e)=>{e.target.style.cursor='pointer'}}
-            //onMouseUp={(e)=>{genDate(row.cta,row.key[row.key.length-1],row.idOrden)}}
+            onMouseUp={(e)=>{genDate(row.key)}}
             >
             <div id={row.uuid?(row.uuid+"DOCN"):(row.key+"DOCN")} >{row.nombre}</div>
           </TableCell>
           <TableCell className={classes.tableCell}
             onMouseEnter={(e)=>{e.target.style.cursor='pointer'}}
-            //onMouseUp={(e)=>{genDate(row.cta,row.key[row.key.length-1],row.idOrden)}}
+            onMouseUp={(e)=>{genDate(row.key)}}
             >
           {/*<Input id={row.uuid?(row.uuid+"DESC"):(row.key+"DESC")} type='textarea' onMouseDown={(e)=>{e.target.style.borderColor='green'}}
             onBlur={(e)=>{e.target.style.borderColor='gray'}} onKeyUp={keyUpHandle}  defaultValue={row.descripcion} />*/}

@@ -106,6 +106,10 @@ class App extends React.Component {
 handleUpper = e => {
     try{
       console.log(e.target.id)
+      console.log(e.which)
+      if(e.which===9){
+        return false;
+      }
       /*if(e.target.id==="cta"){
         const v = e.target.value;
         if(v){
@@ -116,6 +120,10 @@ handleUpper = e => {
           this.getFiles(0,e.target.value);
         }
 
+        if(e.target.value===""){
+          return false
+        }
+        
         if(e.target.id==="nombre"){
           const id = document.getElementById("ID").value;
           //if(!id){
@@ -139,13 +147,13 @@ handleUpper = e => {
           this.getFiles(5,e.target.value);
         }
 
-        if (e.which === 32 || e.which > 39) {
-          /*
+        if ((e.which === 32 || e.which > 39)&&e.target.id!=="nombre") {
+          
             this.selectionStartNombre = e.target.selectionStart
             this.selectionEndNombre = e.target.selectionEnd
             e.target.value = e.target.value.toUpperCase()
             e.target.setSelectionRange(this.selectionStartNombre, this.selectionEndNombre);
-          */
+          
         }else if(e.which===13){
           //this.handdleUp()
         }
@@ -235,7 +243,12 @@ setTotal=(t,idV,v)=>{
 }
 
 componentDidMount(){
-  this.getFiles();
+  const {ID} = this.state
+  if(parseInt(ID)){
+    this.getFiles(0,ID);
+  }else{
+    this.getFiles();
+  }
 }
 
 showNotification = (place,labelW,CTA) => {
@@ -329,7 +342,7 @@ notify = (label,place, color,icon,CTA) => {
         ),
         type: type,
         icon: "tim-icons "+icon,
-        autoDismiss: 0
+        autoDismiss: 3000
         };
        // console.log(snackBand)
        // if(!snackBand){

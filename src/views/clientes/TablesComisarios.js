@@ -321,7 +321,21 @@ buscarCTA = (key) => (event) => {
   const CTAnombre = document.getElementById('CTANM').value;
   //const checkU = document.getElementById('check0');
   this.tipoB = key
-  const labelB = key===0?'ID':'NOMBRE'
+  let labelB = 0 //key===0?'ID':'NOMBRE'
+  switch(key){
+    /*case 0: {
+      labelB = 'ID';
+      break;
+    }*/
+    case 1:{
+      labelB = 'NOMBRE';
+      break;
+    }
+    case 2:{
+      labelB = 'LOCALIDAD';
+      break;
+    }
+  }
   this.setState({labelB})
   //if (CTAnombre !== '') {
   this.allClientes(CTAnombre)    
@@ -546,6 +560,13 @@ render() {
                                   onClick={this.buscarCTA(1)}
                                 >
                                   Por nombre
+                                </MenuItem>
+                                <MenuItem
+                                  key={"localidad"}
+                                  className={classesM.dropdownItem}
+                                  onClick={this.buscarCTA(2)}
+                                >
+                                  Localidad
                                 </MenuItem>
                               </MenuList>
                             </ClickAwayListener>
