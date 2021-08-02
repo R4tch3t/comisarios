@@ -150,16 +150,19 @@ export default (props) => {
           </TableCell>
           <TableCell className={classes.tableCell}
             onMouseEnter={(e)=>{e.target.style.cursor='pointer'}}
+            onMouseUp={(e)=>{genDate(row.key)}}
           >
             {row.descripcion}
           </TableCell>
           <TableCell className={classes.tableCell}
             onMouseEnter={(e)=>{e.target.style.cursor='pointer'}}
+            onMouseUp={(e)=>{genDate(row.key)}}
           >
             {row.seccion}
           </TableCell>
           <TableCell className={classes.tableCell}
             onMouseEnter={(e)=>{e.target.style.cursor='pointer'}}
+            onMouseUp={(e)=>{genDate(row.key)}}
           >
             {row.asunto}
           </TableCell>
