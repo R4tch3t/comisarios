@@ -366,17 +366,17 @@ notify = (label,place, color,icon,CTA) => {
         }
         var options = {};
         options = {
-        place: place,
-        message: (
-            <div>
-            <div id={'snack'+CTA} >
-                {label}
-            </div>
-            </div>
-        ),
-        type: type,
-        icon: "tim-icons "+icon,
-        autoDismiss: 0
+          place: place,
+          message: (
+              <div>
+              <div id={'snack'+CTA} >
+                  {label}
+              </div>
+              </div>
+          ),
+          type: type,
+          icon: "tim-icons "+icon,
+          autoDismiss: 3
         };
        // console.log(snackBand)
        // if(!snackBand){

@@ -59,7 +59,7 @@ const upLoadD = async(uuid, CTA, c, port=3131, analize=false, npage=0, bandF)=>{
   }
 
   //console.log(`bodyJSON ${bodyJSON}`)
-  //console.log(bodyJSON)
+  console.log(bodyJSON)
   //console.log(c.base64)
   
   const response = await fetch(sendUri, {

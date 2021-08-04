@@ -21,7 +21,7 @@ export default (props) => {
   // let descripcion = ''
   const getD = (uuid,CTA,idDoc,d) => {
     //tp = tp[0].toLowerCase()
-    const docName=document.getElementById(uuid?(uuid+"DOCN"):(idDoc+"DOCN")).innerHTML
+    const docName=document.getElementById(uuid?(uuid+"DOCNH"):(idDoc+"DOCNH")).value
     let root = null;
     if(d){
       //url = `${ip(2998)}docomid/${CTA}/${docName}`;
@@ -83,6 +83,7 @@ export default (props) => {
                   onMouseEnter={(e)=>{e.target.style.cursor='pointer'}}
                   //onMouseUp={(e)=>{genDate(row.cta,row.key[row.key.length-1],row.idOrden)}}
                   >
+                  <input type='hidden' id={row.uuid?(row.uuid+"DOCNH"):(row.key+"DOCNH")} value={row.nombre} />
                   <div id={row.uuid?(row.uuid+"DOCN"):(row.key+"DOCN")} >{row.nombre}</div>
                 </TableCell>
                 <TableCell className={classes.tableCell}
