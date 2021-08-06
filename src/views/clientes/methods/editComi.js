@@ -8,7 +8,7 @@ export default async (c,nombre,sexo,edad,localidad,telefono,cargo, fechaN, fecha
     const sendUri = `${ip("2000")}comisarios/addComi`;
     //const dateUp =  
     const bodyJSON = {
-         CTA: c.CTA, nombre,sexo,edad,localidad,telefono,cargo, fechaN, fechaE, obs, fileName, bandEdit: true,
+         CTA: c.state.CTA, nombre,sexo,edad,localidad,telefono,cargo, fechaN, fechaE, obs, fileName, bandEdit: true,
     }
     console.log(bodyJSON)
     const response = await fetch(sendUri, {
